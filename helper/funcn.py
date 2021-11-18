@@ -18,7 +18,7 @@ COUNT = []
 OK = {}
 
 uptime = dt.now()
-os.system("wget https://telegra.ph/file/75ee20ec8d8c8bba84f02.jpg -O thumb.jpg")
+os.system("wget https://i.ibb.co/KDkT4vx/ultd.png -O thumb.jpg")
 
 if not os.path.isdir("downloads/"):
     os.mkdir("downloads/")
@@ -86,7 +86,7 @@ async def progress(current, total, event, start, type_of_ps, file=None):
         )
         tmp = (
             progress_str
-            + "`{0} of {1}`\n\n`✦ Speed: {2}/s`\n\n`✦ ETA: {3}`\n\n".format(
+            + "`{0} of {1}`\n\n`⚡ Speed: {2}/s`\n\n`⏳ ETA: {3}`\n\n".format(
                 hbs(current),
                 hbs(total),
                 hbs(speed),
@@ -95,10 +95,10 @@ async def progress(current, total, event, start, type_of_ps, file=None):
         )
         if file:
             await event.edit(
-                "`✦ {}`\n\n`File Name: {}`\n\n{}".format(type_of_ps, file, tmp)
+                "`📑 {}`\n\n`File Name: {}`\n\n{}".format(type_of_ps, file, tmp)
             )
         else:
-            await event.edit("`✦ {}`\n\n{}".format(type_of_ps, tmp))
+            await event.edit("`{}`\n\n{}".format(type_of_ps, tmp))
 
 
 async def genss(file):
