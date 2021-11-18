@@ -31,7 +31,7 @@ async def start(event):
     await event.reply(
         f"Hi `{ok.user.first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too.",
         buttons=[
-            [Button.inline("HELP", data="ihelp")],
+            [Button.inline("Info", data="ihelp")],
             [
                 Button.url("Source Code", url="github.com/1Danish-00/CompressorBot"),
             ],
@@ -48,7 +48,7 @@ async def help(event):
 async def ihelp(event):
     await event.edit(
         "**A Quality CompressorBot**\n\n+This Bot Compress Videos With Negligible Quality Change.\n+Generate Sample Compressed Video\n+Screenshots Too\n+Easy to Use\n-Due to Quality Settings Bot Takes Time To Compress.\nSo Be patience Nd Send videos One By One After Completing.\nDont Spam Bot.\n\nJust Forward Video To Get Options",
-        buttons=[Button.inline("BACK", data="beck")],
+        buttons=[Button.inline("Back", data="beck")],
     )
 
 
@@ -57,7 +57,7 @@ async def beck(event):
     await event.edit(
         f"Hi `{ok.user.first_name}`\nThis is A CompressorBot Which Can Encode Videos.\nReduce Size of Videos With Negligible Quality Change\nU can Generate Samples/screenshots too.",
         buttons=[
-            [Button.inline("HELP", data="ihelp")],
+            [Button.inline("Info", data="ihelp")],
             [
                 Button.url("Source Code", url="github.com/1Danish-00/"),
             ],
@@ -85,10 +85,10 @@ async def back(e):
         "**What To Do**",
         buttons=[
             [
-                Button.inline("GENERATE SAMPLE", data=f"gsmpl{key}"),
-                Button.inline("SCREENSHOTS", data=f"sshot{key}"),
+                Button.inline("Generate Sample", data=f"gsmpl{key}"),
+                Button.inline("Screenshot", data=f"sshot{key}"),
             ],
-            [Button.inline("COMPRESS", data=f"sencc{key}")],
+            [Button.inline("Compress", data=f"sencc{key}")],
         ],
     )
 
