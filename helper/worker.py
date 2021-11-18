@@ -38,10 +38,10 @@ async def screenshot(e):
             "Check Screenshots Above",
             buttons=[
                 [
-                    Button.inline("GENERATE SAMPLE", data=f"gsmpl{wah}"),
-                    Button.inline("COMPRESS", data=f"sencc{wah}"),
+                    Button.inline("Generate Sample", data=f"gsmpl{wah}"),
+                    Button.inline("Compress", data=f"sencc{wah}"),
                 ],
-                [Button.inline("SKIP", data=f"skip{wah}")],
+                [Button.inline("Skip", data=f"skip{wah}")],
             ],
         )
         COUNT.remove(e.chat_id)
@@ -75,8 +75,8 @@ async def encc(e):
         nn = await e.edit(
             "`Compressing..`",
             buttons=[
-                [Button.inline("STATS", data=f"stats{wah}")],
-                [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
+                [Button.inline("Stats", data=f"stats{wah}")],
+                [Button.inline("Cancel Process", data=f"skip{wah}")],
             ],
         )
         cmd = f'ffmpeg -i "{dl}" -preset ultrafast -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y'
@@ -145,8 +145,8 @@ async def sample(e):
     xxx = await e.edit(
         "`Generating Sample...`",
         buttons=[
-            [Button.inline("STATS", data=f"stats{wah}")],
-            [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
+            [Button.inline("Stats", data=f"stats{wah}")],
+            [Button.inline("Cancel Process", data=f"skip{wah}")],
         ],
     )
     ncmd = f'ffmpeg -i "{dl}" -preset ultrafast -ss {ss} -to {dd} -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y'
@@ -177,10 +177,10 @@ async def sample(e):
             ),
             buttons=[
                 [
-                    Button.inline("SCREENSHOTS", data=f"sshot{wah}"),
-                    Button.inline("COMPRESS", data=f"sencc{wah}"),
+                    Button.inline("Screenshot", data=f"sshot{wah}"),
+                    Button.inline("Compress", data=f"sencc{wah}"),
                 ],
-                [Button.inline("SKIP", data=f"skip{wah}")],
+                [Button.inline("Skip", data=f"skip{wah}")],
             ],
         )
         COUNT.remove(e.chat_id)
@@ -300,11 +300,11 @@ async def encod(event):
             f"DOWNLODING COMPLETED!!",
             buttons=[
                 [
-                    Button.inline("GENERATE SAMPLE", data=f"gsmpl{key}"),
-                    Button.inline("SCREENSHOTS", data=f"sshot{key}"),
+                    Button.inline("Generate Sample", data=f"gsmpl{key}"),
+                    Button.inline("Screenshot", data=f"sshot{key}"),
                 ],
-                [Button.url("MEDIAINFO", url=inf)],
-                [Button.inline("COMPRESS", data=f"sencc{key}")],
+                [Button.url("Media Info", url=inf)],
+                [Button.inline("Compress", data=f"sencc{key}")],
             ],
         )
     except BaseException as er:
@@ -321,8 +321,8 @@ async def customenc(e, key):
     nn = await e.edit(
         "`Compressing..`",
         buttons=[
-            [Button.inline("STATS", data=f"stats{wah}")],
-            [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
+            [Button.inline("Stats", data=f"stats{wah}")],
+            [Button.inline("Cancel Process", data=f"skip{wah}")],
         ],
     )
     cmd = f'ffmpeg -i "{dl}" -preset ultrafast -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{out}" -y'
