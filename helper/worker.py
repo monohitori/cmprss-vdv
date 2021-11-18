@@ -35,7 +35,7 @@ async def screenshot(e):
         await e.client.send_file(e.chat_id, pic)
         await e.client.send_message(
             e.chat_id,
-            "Check Screenshots Above 😁",
+            "Check Screenshots Above",
             buttons=[
                 [
                     Button.inline("GENERATE SAMPLE", data=f"gsmpl{wah}"),
@@ -62,7 +62,7 @@ async def stats(e):
         ans = f"Downloaded:\n{ov}\n\nCompressing:\n{ot}"
         await e.answer(ans, cache_time=0, alert=True)
     except BaseException:
-        await e.answer("Someting Went Wrong 🤔\nResend Media", cache_time=0, alert=True)
+        await e.answer("Someting Went Wrong\nResend Media", cache_time=0, alert=True)
 
 
 async def encc(e):
@@ -208,7 +208,7 @@ async def encod(event):
             oc = event.fwd_from.from_id.user_id
             occ = (await event.client.get_me()).id
             if oc == occ:
-                return await event.reply("`This Video File is already Compressed 😑😑.`")
+                return await event.reply("`This Video File is already Compressed.`")
         except BaseException:
             pass
         xxx = await event.reply("`Downloading...`")
@@ -297,7 +297,7 @@ async def encod(event):
         COUNT.remove(user.id)
         await event.client.send_message(
             event.chat_id,
-            f"🐠DOWNLODING COMPLETED!!🐠",
+            f"DOWNLODING COMPLETED!!",
             buttons=[
                 [
                     Button.inline("GENERATE SAMPLE", data=f"gsmpl{key}"),
